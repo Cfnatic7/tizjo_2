@@ -16,14 +16,15 @@ def reverse_capital_letters(param):
 def my_printf(format_string,param):
     shouldDo=True
     for idx in range(0,len(format_string)):
-        if shouldDo and len(format_string) > (idx + 1):
+        if shouldDo:
             if format_string[idx] == '#' and format_string[idx+1] == 'k':
-                print(reverse_capital_letters(param),end="")
+                print(param.swapcase(),end="")
                 shouldDo=False
             else:
                 print(format_string[idx],end="")
         else:
             shouldDo=True
+    print("")
 
 data=sys.stdin.readlines()
 
